@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "_id": "611d9dc830508c124e13b64f",
+      "course": "66",
+      "courseId": "346601",
+      "practica": "2",
+      "ejercicio": "6",
+      "actividad": "4",
+      "pending": true,
+      "title": "¿que es irracional?",
+      "description": "No lo entendí",
+      "date": "1629330887581"
+    },
+    {
+      "_id": "611d9dda30508c124e13b650",
+      "course": "66",
+      "courseId": "346601",
+      "practica": "2",
+      "ejercicio": "6",
+      "actividad": "4",
+      "pending": true,
+      "title": "¿que es la nada?",
+      "description": "",
+      "date": "1629330906120"
+    },
+    {
+      "_id": "611d9e4330508c124e13b651",
+      "course": "66",
+      "courseId": "346601",
+      "practica": "2",
+      "ejercicio": "Ninguno",
+      "actividad": "4",
+      "pending": true,
+      "title": "¿que es la sucesion?",
+      "description": "",
+      "date": "1629331011804"
+    },
+    {
+      "_id": "611d9e7d30508c124e13b652",
+      "course": "66",
+      "courseId": "346601",
+      "practica": "2",
+      "ejercicio": "Ninguno",
+      "actividad": "Ninguno",
+      "pending": false,
+      "title": "¿que es la integral?",
+      "description": "hkljhj",
+      "date": "1629331069781"
+    }
+  ],
+  "message": "asks listed"
+}
