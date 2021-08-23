@@ -12,6 +12,9 @@ export async function getAsks(course) {
 }
 
 export async function createAsk(body) {
+  // Cambia comment (un string) por comments (un array de strings)
+  body.comments = [body.comment];
+  delete body.comment;
   try {
     await fetch(API_URL, {
       method: 'POST',

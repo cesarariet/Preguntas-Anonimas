@@ -3,7 +3,7 @@ import { createAsk } from '../api';
 const AskForm = ({ handlerChange }) => {
   function handlerClick() {
     const title = document.querySelector('#title').value;
-    const description = document.querySelector('#description').value;
+    const comment = document.querySelector('#comment').value;
     const practica = document.querySelector('#practica').value || 'Ninguna';
     const ejercicio = document.querySelector('#ejercicio').value || 'Ninguno';
     const actividad = document.querySelector('#actividad').value || 'Ninguna';
@@ -12,7 +12,7 @@ const AskForm = ({ handlerChange }) => {
     createAsk({
       course: window.location.pathname.slice(1),
       title,
-      description,
+      comment,
       practica,
       ejercicio,
       actividad,
@@ -47,7 +47,7 @@ const AskForm = ({ handlerChange }) => {
           Pregunta: <input type="text" name="title" id="title" />
         </label>
         <label>
-          Comentario: <textarea name="description" id="description" />
+          Comentario: <textarea name="comment" id="comment" />
         </label>
         <button type="button" onClick={handlerClick}>
           Enviar Pregunta

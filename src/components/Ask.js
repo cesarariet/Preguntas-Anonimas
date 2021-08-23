@@ -1,7 +1,7 @@
 const Ask = ({
   _id,
   title,
-  description,
+  comments,
   practica,
   ejercicio,
   actividad,
@@ -11,7 +11,13 @@ const Ask = ({
   return (
     <div className="ask">
       <h2 className="ask__title">{title}</h2>
-      <div className="ask__description">{description}</div>
+      <div className="ask__description">
+        {comments.map((comment) => (
+          <>
+            {comment} <br />
+          </>
+        ))}
+      </div>
       <div className="ask__metadata">
         <div>Actividad: {actividad}</div>
         <div>Práctica: {practica}</div>
