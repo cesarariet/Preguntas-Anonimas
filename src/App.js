@@ -13,9 +13,12 @@ function App() {
   // const [messageAskFilter, setMessageAskFilter] = useState('');
   useEffect(() => {
     if (courses.some((i) => i === course)) {
+      document.title = `Preguntas de la materia código ${course}`;
       getAsks(course)
         .then((res) => (asks = res))
         .then(() => setAsksFiltered(asks));
+    } else {
+      document.title = 'El codigo de materia es incorrecto';
     }
   }, []);
 
