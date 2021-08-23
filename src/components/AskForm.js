@@ -1,30 +1,34 @@
 import { createAsk } from '../api';
 
 const AskForm = ({ handlerChange }) => {
-  function handlerClick(event) {
-    const form = event.target;
-    const course = document.querySelector('#course').value;
-    const title = form.querySelector('#title').value;
-    const description = form.querySelector('#description').value;
-    const practica = form.querySelector('#practica').value || 'Ninguna';
-    const ejercicio = form.querySelector('#ejercicio').value || 'Ninguno';
-    const actividad = form.querySelector('#actividad').value || 'Ninguna';
+  function handlerClick() {
+    const title = document.querySelector('#title').value;
+    const description = document.querySelector('#description').value;
+    const practica = document.querySelector('#practica').value || 'Ninguna';
+    const ejercicio = document.querySelector('#ejercicio').value || 'Ninguno';
+    const actividad = document.querySelector('#actividad').value || 'Ninguna';
     const pending = true;
-    if (!(course && title))
-      return alert('Es obligatorio elegir un curso y escribir una pregunta');
+    if (!title) return alert('Es obligatorio escribir una pregunta');
     createAsk({
-      course,
+      course: window.location.pathname.slice(1),
       title,
       description,
       practica,
       ejercicio,
       actividad,
       pending,
-    });
+    }).then(() => window.location.reload());
   }
   return (
     <>
       <form>
+        <input
+          type="number"
+          name="actividad"
+          id="actividad"
+          placeholder="Actividad"
+          onChange={handlerChange}
+        />
         <input
           type="number"
           name="practica"
@@ -39,15 +43,12 @@ const AskForm = ({ handlerChange }) => {
           placeholder="Ejercicio"
           onChange={handlerChange}
         />
-        <input
-          type="number"
-          name="actividad"
-          id="actividad"
-          placeholder="Actividad"
-          onChange={handlerChange}
-        />
-        Pregunta: <input type="text" name="title" id="title" />
-        Comentario: <input type="text" name="description" id="description" />
+        <label>
+          Pregunta: <input type="text" name="title" id="title" />
+        </label>
+        <label>
+          Comentario: <textarea name="description" id="description" />
+        </label>
         <button type="button" onClick={handlerClick}>
           Enviar Pregunta
         </button>

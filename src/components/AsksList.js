@@ -6,7 +6,7 @@ const AsksList = ({ asksList }) => {
       {asksList
         .reduce((acc, ask) => [ask].concat(acc), [])
         .map((ask) => (
-          <Ask {...ask} />
+          <Ask {...ask} key={ask._id} />
         ))}
     </div>
   );

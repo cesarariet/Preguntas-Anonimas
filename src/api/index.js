@@ -20,7 +20,6 @@ export async function createAsk(body) {
         'Content-Type': 'application/json; charset=utf-8',
       },
     });
-    return alert('Pregunta creada');
   } catch (error) {
     alert('Error al crear la pregunta');
     console.log('No se pudo crear la pregunta ---------', error);
