@@ -25,33 +25,33 @@ function App() {
   function printAsks(event) {
     const { name, value } = event.target;
     messageAskFilter = `Filtrando preguntas por ${name} ${value}`;
-    if (isNaN(parseInt(value))) return setAsksFiltered(asks);
+    if (isNaN(parseInt(value))) {
+      messageAskFilter = '';
+      return setAsksFiltered(asks);
+    }
     return setAsksFiltered(
       asks.filter((ask) => ask[name] === value || isNaN(parseInt(ask[name])))
     );
   }
-  function handlerClick() {
-    messageAskFilter = '';
-    return setAsksFiltered(asks);
-  }
   return (
     <>
-      <h1>Preguntas anónimas</h1>
-      <p>
-        Elija el curso, la actividad o práctica relacionado con la pregunta (si
-        corresponde).
-      </p>
       {courses.some((i) => i === course) ? (
         <>
-          <AskForm handlerChange={printAsks} />
-          <button name="resetear" onClick={handlerClick} type="button">
-            Resetear
-          </button>
-          <p>{messageAskFilter}</p>
-          <AsksList asksList={asksFiltered} />
+          <div className="askForm">
+            <h1>Preguntas anónimas</h1>
+            <p>
+              Elija la actividad o práctica relacionado con la pregunta (si
+              corresponde).
+            </p>
+            <AskForm handlerChange={printAsks} />
+          </div>
+          <div className="askList">
+            <p>{messageAskFilter}</p>
+            <AsksList asksList={asksFiltered} />
+          </div>
         </>
       ) : (
-        <p>Dirección incorrecta. </p>
+        <h1 className="error404">Dirección incorrecta. </h1>
       )}
     </>
   );

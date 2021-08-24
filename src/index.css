@@ -13,3 +13,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media (min-width: 640px) {
+  #root {
+    max-width: 1024px;
+    margin: auto;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    height: 98vh;
+  }
+
+  #root .askList {
+    height: 95vh;
+    margin: auto;
+    overflow-y: scroll;
+  }
+}
+.error404 {
+  position: fixed;
+  height: 95vh;
+  width: 95vw;
+  text-align: center;
+  left: 0;
+}

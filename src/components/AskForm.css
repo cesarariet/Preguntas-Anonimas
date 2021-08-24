@@ -1,0 +1,30 @@
+form {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+form input {
+  width: 2em;
+}
+
+form #title {
+  width: 90%;
+  text-align: center;
+}
+
+form #comment {
+  width: 90%;
+  height: 1em;
+}
+
+form #comment:focus {
+  height: 4em;
+}
+
+@media (min-width: 640px) {
+  form #comment,
+  form #comment:focus {
+    height: 6em;
+  }
+}

@@ -1,4 +1,5 @@
 import { createAsk } from '../api';
+import './AskForm.css';
 
 const AskForm = ({ handlerChange }) => {
   function handlerClick() {
@@ -22,33 +23,47 @@ const AskForm = ({ handlerChange }) => {
   return (
     <>
       <form>
-        <input
-          type="number"
-          name="actividad"
-          id="actividad"
-          placeholder="Actividad"
-          onChange={handlerChange}
-        />
-        <input
-          type="number"
-          name="practica"
-          id="practica"
-          onChange={handlerChange}
-          placeholder="Practica"
-        />
-        <input
-          type="number"
-          name="ejercicio"
-          id="ejercicio"
-          placeholder="Ejercicio"
-          onChange={handlerChange}
-        />
         <label>
-          Pregunta: <input type="text" name="title" id="title" />
+          Actividad:{' '}
+          <input
+            type="number"
+            name="actividad"
+            id="actividad"
+            onChange={handlerChange}
+          />
+        </label>
+
+        <label>
+          {'  '}
+          Práctica:{' '}
+          <input
+            type="number"
+            name="practica"
+            id="practica"
+            onChange={handlerChange}
+          />
         </label>
         <label>
-          Comentario: <textarea name="comment" id="comment" />
+          {'  '}
+          Ejercicio:{' '}
+          <input
+            type="number"
+            name="ejercicio"
+            id="ejercicio"
+            onChange={handlerChange}
+          />
         </label>
+        <br />
+        <label>
+          Pregunta: <br />
+          <input type="text" name="title" id="title" />
+        </label>
+        <br />
+        <label>
+          Comentario: <br />
+          <textarea name="comment" id="comment" />
+        </label>
+        <br />
         <button type="button" onClick={handlerClick}>
           Enviar Pregunta
         </button>

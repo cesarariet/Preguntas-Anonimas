@@ -1,0 +1,23 @@
+.ask {
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  margin: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.ask__title {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.ask__metadata {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.7em;
+  margin: 0;
+}
+
+.ask__comments {
+  margin: 10px;
+  padding-left: 1em;
+}
