@@ -16,13 +16,15 @@ const Ask = ({
         <div>Actividad: {actividad}</div>
         <div>Práctica: {practica}</div>
         <div>Ejercicio: {ejercicio}</div>
-        <div>Estado: {pending ? 'pendiente' : 'respondida'}</div>
+        {/* <div>Estado: {pending ? 'pendiente' : 'respondida'}</div> */}
       </div>
-      <ul className="ask__comments">
-        {comments.map((comment, index) => (
-          <li key={index}>{comment}</li>
-        ))}
-      </ul>
+      {
+        <div className="ask__comments">
+          {comments.map(
+            (comment, index) => comment !== '' && <p key={index}>{comment}</p>
+          )}
+        </div>
+      }
     </div>
   );
 };

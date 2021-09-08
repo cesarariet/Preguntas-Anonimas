@@ -15,9 +15,10 @@
   justify-content: space-evenly;
   font-size: 0.7em;
   margin: 0;
+  margin-bottom: 5px;
 }
 
 .ask__comments {
-  margin: 10px;
-  padding-left: 1em;
+  /* margin: 10px; */
+  padding-left: 10px;
 }

@@ -6,20 +6,23 @@ form {
 
 form input {
   width: 2em;
+  background: white;
+  text-align: center;
 }
 
 form #title {
   width: 90%;
-  text-align: center;
 }
 
 form #comment {
   width: 90%;
   height: 1em;
+  background: white;
 }
 
 form #comment:focus {
   height: 4em;
+  background: white;
 }
 
 @media (min-width: 640px) {
