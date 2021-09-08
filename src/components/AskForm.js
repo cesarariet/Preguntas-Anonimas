@@ -1,7 +1,16 @@
-import { createAsk } from '../api';
+import { connect } from 'react-redux';
+import { createAskAction, filterAsksAction } from '../actions/asksActions';
+
 import './AskForm.css';
 
-const AskForm = ({ handlerChange }) => {
+const AskForm = ({ asks, createAskAction, filterAsksAction }) => {
+  function handlerChange() {
+    const practica = document.querySelector('#practica').value || 'Ninguna';
+    const ejercicio = document.querySelector('#ejercicio').value || 'Ninguno';
+    const actividad = document.querySelector('#actividad').value || 'Ninguna';
+
+    filterAsksAction({ asks, practica, ejercicio, actividad });
+  }
   function handlerClick() {
     const title = document.querySelector('#title').value;
     const comment = document.querySelector('#comment').value;
@@ -10,7 +19,7 @@ const AskForm = ({ handlerChange }) => {
     const actividad = document.querySelector('#actividad').value || 'Ninguna';
     const pending = true;
     if (!title) return alert('Es obligatorio escribir una pregunta');
-    createAsk({
+    createAskAction({
       course: window.location.pathname.slice(1),
       title,
       comment,
@@ -18,7 +27,7 @@ const AskForm = ({ handlerChange }) => {
       ejercicio,
       actividad,
       pending,
-    }).then(() => window.location.reload());
+    });
   }
   return (
     <>
@@ -72,4 +81,10 @@ const AskForm = ({ handlerChange }) => {
   );
 };
 
-export default AskForm;
+function mapStateToProps(reducers) {
+  return reducers.asksReducers;
+}
+
+export default connect(mapStateToProps, { createAskAction, filterAsksAction })(
+  AskForm
+);

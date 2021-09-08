@@ -1,7 +1,6 @@
 import './Ask.css';
 
 const Ask = ({
-  _id,
   title,
   comments,
   practica,
@@ -21,9 +20,7 @@ const Ask = ({
       </div>
       <ul className="ask__comments">
         {comments.map((comment, index) => (
-          <>
-            <li key={index}>{comment}</li>
-          </>
+          <li key={index}>{comment}</li>
         ))}
       </ul>
     </div>

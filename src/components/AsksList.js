@@ -5,8 +5,8 @@ const AsksList = ({ asksList }) => {
     <div className="asksList">
       {asksList
         .reduce((acc, ask) => [ask].concat(acc), [])
-        .map((ask) => (
-          <Ask {...ask} key={ask._id} />
+        .map((ask, index) => (
+          <Ask {...ask} key={index} />
         ))}
     </div>
   );
